@@ -24,7 +24,7 @@ The application is meant to work with the example data provided by the Solr dist
 :exampledocs> java -jar post.jar *.xml
 ```
 
-Access via [localhost:8983/solr/](http://localhost:8983/solr/#/collection1)
+Access via [localhost:8983/solr/](http://localhost:8983/solr/#/my_core_example)
 
 ### Running Showcase
 ```emacs

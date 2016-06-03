@@ -1,0 +1,7 @@
+curl -X POST -H 'Content-type:application/json' --data-binary '{"add-field":{"name":"name","type":"string"}}' http://localhost:8983/solr/my_core_example/schema
+curl -X POST -H 'Content-type:application/json' --data-binary '{"add-field":{"name":"inStock","type":"boolean"}}' http://localhost:8983/solr/my_core_example/schema
+curl -X POST -H 'Content-type:application/json' --data-binary '{"add-field":{"name":"features","type":"strings"}}' http://localhost:8983/solr/my_core_example/schema
+curl -X POST -H 'Content-type:application/json' --data-binary '{"add-field":{"name":"price","type":"float"}}' http://localhost:8983/solr/my_core_example/schema
+curl -X POST -H 'Content-type:application/json' --data-binary '{"add-field":{"name":"cat","type":"strings"}}' http://localhost:8983/solr/my_core_example/schema
+curl -X POST -H 'Content-type:application/json' --data-binary '{"add-field":{"name":"popularity","type":"int"}}' http://localhost:8983/solr/my_core_example/schema
+curl -X POST -H 'Content-type:application/json' --data-binary '{"add-field":{"name":"store","type":"location"}}' http://localhost:8983/solr/my_core_example/schema

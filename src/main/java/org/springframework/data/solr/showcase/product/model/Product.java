@@ -32,7 +32,7 @@ import org.springframework.data.solr.showcase.product.SearchableProductDefinitio
 @Getter
 @Setter
 @ToString
-@SolrDocument(solrCoreName = "collection1")
+@SolrDocument(solrCoreName = "my_core_example")
 public class Product implements SearchableProductDefinition {
 
 	private @Id @Indexed String id;
