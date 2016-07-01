@@ -27,18 +27,21 @@ import org.springframework.data.solr.repository.Query;
 import org.springframework.data.solr.repository.SolrCrudRepository;
 import org.springframework.data.solr.showcase.product.model.Product;
 
+import static org.springframework.data.solr.showcase.product.SearchableProductDefinition.*;
+
 /**
  * @author Christoph Strobl
  */
 interface ProductRepository extends SolrCrudRepository<Product, String> {
 
-	@Highlight(prefix = "<b>", postfix = "</b>")
-	@Query(fields = { SearchableProductDefinition.ID_FIELD_NAME, SearchableProductDefinition.NAME_FIELD_NAME,
-			SearchableProductDefinition.PRICE_FIELD_NAME, SearchableProductDefinition.FEATURES_FIELD_NAME,
-			SearchableProductDefinition.AVAILABLE_FIELD_NAME }, defaultOperator = Operator.AND)
-	HighlightPage<Product> findByNameIn(Collection<String> names, Pageable page);
+    @Highlight(prefix = "<b>", postfix = "</b>")
+    @Query(fields = {ID_FIELD_NAME, NAME_FIELD_NAME, PRICE_FIELD_NAME, FEATURES_FIELD_NAME, AVAILABLE_FIELD_NAME}, defaultOperator = Operator.AND)
+    HighlightPage<Product> findByNameIn(Collection<String> names, Pageable page);
 
-	@Facet(fields = { SearchableProductDefinition.NAME_FIELD_NAME })
-	FacetPage<Product> findByNameStartsWith(Collection<String> nameFragments, Pageable pagebale);
+    @Highlight(prefix = "<b>", postfix = "</b>")
+    @Query(fields = {ID_FIELD_NAME, NAME_FIELD_NAME, PRICE_FIELD_NAME, FEATURES_FIELD_NAME, AVAILABLE_FIELD_NAME}, defaultOperator = Operator.AND)
+    HighlightPage<Product> findByName(String name, Pageable page);
 
+    @Facet(fields = {NAME_FIELD_NAME})
+    FacetPage<Product> findByNameStartsWith(Collection<String> nameFragments, Pageable pagebale);
 }
